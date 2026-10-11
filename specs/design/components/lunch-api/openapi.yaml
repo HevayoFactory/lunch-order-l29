@@ -155,7 +155,7 @@ paths:
   /orders/today:
     get:
       operationId: listOrders
-      summary: Every person's order for today
+      summary: Every person's order for today, sorted by staff name A to Z
       security:
         - oauth2: [orders:read-all]
       parameters:

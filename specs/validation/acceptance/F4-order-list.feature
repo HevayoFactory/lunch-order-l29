@@ -9,6 +9,14 @@ Feature: F4 Order list
       Then she sees Asha with "Chicken katsu curry" and "Fruit cup", and Ravi with "Veggie pad thai"
       And she sees that 2 people have ordered
 
+  @story-F4.1
+  Rule: The list is sorted by the person's name, A to Z
+
+    Scenario: Orders placed out of alphabetical order
+      Given Ravi has ordered "Veggie pad thai", then Maya has ordered "Greek salad", then Asha has ordered "Fruit cup"
+      When Olivia the office manager opens the order list
+      Then she sees the people in the order Asha, Maya, Ravi
+
   @story-F4.2
   Rule: The list is available while ordering is open and after it is closed
 

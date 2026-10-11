@@ -247,7 +247,7 @@ function Orders() {
   const items = useCollection<MenuItem>("menuItems");
   const [stored] = useValue<string>("menuStatus");
   const closed = viewStatus(state, stored) === "closed";
-  const list = state === "state.empty" ? [] : orderList.items;
+  const list = state === "state.empty" ? [] : [...orderList.items].sort((a, b) => a.person.localeCompare(b.person));
   const namesOf = (o: Order) => o.itemIds.map((id) => items.get(id)?.name ?? id).join(", ");
   return (
     <Shell>
