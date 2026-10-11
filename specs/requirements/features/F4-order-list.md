@@ -18,6 +18,7 @@ Needs: F2.
 
 - The order list is per person; there is no per-item totals view.
 - The list is on-screen only.
+- The list is sorted by the person's name, A to Z.
 - Only the office manager can see everyone's orders; staff see only their own.
 
 ## Out of Scope
