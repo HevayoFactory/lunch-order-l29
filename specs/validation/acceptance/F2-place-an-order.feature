@@ -14,6 +14,15 @@ Feature: F2 Place an order
       When Asha tries to place an order with no items
       Then Asha has no order for today
 
+  @story-F2.1
+  Rule: Only staff place orders, not the office manager
+
+    @negative
+    Scenario: The office manager tries to order
+      Given Olivia the office manager has published a menu with "Greek salad"
+      When Olivia tries to place an order for "Greek salad" with her office manager sign-in
+      Then no order is added to today's orders
+
   @story-F2.2 @story-F2.4
   Rule: Staff can change their order while ordering is open
 

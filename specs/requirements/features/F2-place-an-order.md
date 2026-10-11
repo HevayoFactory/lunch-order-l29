@@ -22,7 +22,7 @@ Needs: F1.
 - Each menu item can be chosen once; there are no quantities.
 - An order has no notes or special requests.
 - An order has at least one item; to have none, the person cancels it. *assumed*
-- No. The office manager does not order lunch in the app; keep the roles separate.
+- Only staff place orders; the office manager does not order lunch in the app, and the two roles stay separate.
 
 ## Out of Scope
 
