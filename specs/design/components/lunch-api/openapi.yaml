@@ -265,10 +265,10 @@ components:
           items: { type: string }
     Order:
       type: object
-      required: [id, userName, items]
+      required: [id, staffName, items]
       properties:
         id: { type: string }
-        userName: { type: string }
+        staffName: { type: string, description: display name of the person who ordered }
         items:
           type: array
           items:
