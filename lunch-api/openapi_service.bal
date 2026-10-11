@@ -138,7 +138,7 @@ service http:InterceptableService / on ep0 {
         return http:NO_CONTENT;
     }
 
-    # Every person's order for today
+    # Every person's order for today, sorted by staff name A to Z
     resource function get orders/today(int 'limit = 20, int offset = 0) returns OrderPage|http:InternalServerError {
         OrderPage|error r = listOrdersDb('limit, offset);
         if r is error {
