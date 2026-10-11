@@ -23,7 +23,7 @@
     },
     {
       "path": "specs/design/components/lunch-webapp/prototype.json",
-      "checkedHash": "f3680e481cce401d170e19d48740d8e9d71f50f632264217dcb96a3f5679880a",
+      "checkedHash": "4e4bf81950a12d5e51bc6a9419123f0d05a40b30c9684fd91e7955f9e5856de9",
       "comments": [
         {
           "id": "f0baf72e-a7fa-4bd0-9674-502c15b5abf7",
@@ -91,11 +91,11 @@
     },
     {
       "path": "specs/design/components/lunch-api/openapi.yaml",
-      "checkedHash": "acabdb01b42c1f17a7e54bc1b017d35b901da8be23c08f4f0754e4617b3dba4d"
+      "checkedHash": "afb588ab2d69b9746d1be45e0c711b12e1c56497542242e3c404836c22363267"
     },
     {
       "path": "specs/design/decisions.md",
-      "checkedHash": "79ca0c6eca0ad05563bc119246a56da086f75986fc9c2523d92ffdfdc98e265d"
+      "checkedHash": "01cda02bf921e509954587b42abdd87e5e4ec9739fac214b2f1bb1aa0e281b28"
     }
   ]
 }
