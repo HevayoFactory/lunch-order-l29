@@ -1,0 +1,4 @@
+apiVersion = "agentic-engineer/v1"
+name = "lunch-order-l29"
+createdAt = "2026-10-11T07:41:42Z"
+idea = "A team lunch-order app: staff sign in and order lunch from today's menu before a cutoff; an office manager publishes the day's menu and closes ordering, then sees the order list. One web app and one API, sign-in with two roles (staff, office manager)."
