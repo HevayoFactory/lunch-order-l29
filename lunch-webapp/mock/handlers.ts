@@ -128,7 +128,8 @@ export const handlers = [
     const url = new URL(request.url);
     const limit = Math.min(Number(url.searchParams.get("limit") ?? 20), 100);
     const offset = Number(url.searchParams.get("offset") ?? 0);
-    const data = orders.slice(offset, offset + limit).map(view);
+    const sorted = [...orders].sort((a, b) => view(a).staffName.localeCompare(view(b).staffName));
+    const data = sorted.slice(offset, offset + limit).map(view);
     const link = (o: number) => `/orders/today?limit=${limit}&offset=${o}`;
     return HttpResponse.json({
       count: orders.length,
