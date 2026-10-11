@@ -388,7 +388,7 @@ function listOrdersDb(int 'limit, int offset) returns OrderPage|error {
     int count = check db->queryRow(`SELECT count(*) FROM orders WHERE menu_id = ${menu.id}::uuid`);
     stream<OrderRow, sql:Error?> rows = db->query(`SELECT id::text AS id, staff_name AS "staffName"
         FROM orders WHERE menu_id = ${menu.id}::uuid
-        ORDER BY created_at, id LIMIT ${pageSize} OFFSET ${firstRow}`);
+        ORDER BY lower(staff_name), staff_name, id LIMIT ${pageSize} OFFSET ${firstRow}`);
     OrderRow[] page = check from OrderRow r in rows
         select r;
     Order[] data = [];
