@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 3,
+  "name": "Team Lunch Order",
+  "entryScreen": "screen.today",
+  "roles": [
+    { "id": "Staff", "name": "Staff" },
+    { "id": "Office Manager", "name": "Office manager" }
+  ],
+  "states": [
+    { "id": "state.default", "name": "Default" },
+    { "id": "state.empty", "name": "Nothing yet (no menu / no orders)" },
+    { "id": "state.validation-error", "name": "Validation errors" },
+    { "id": "state.closed", "name": "Ordering closed" }
+  ],
+  "screens": [
+    { "id": "screen.today", "name": "Today's lunch", "roleIds": ["Staff", "Office Manager"] },
+    { "id": "screen.orders", "name": "Order list", "roleIds": ["Office Manager"] },
+    { "id": "screen.account", "name": "Account", "roleIds": ["Staff", "Office Manager"] },
+    { "id": "screen.settings", "name": "Settings", "roleIds": ["Staff", "Office Manager"] },
+    { "id": "screen.signed-out", "name": "Signed out", "roleIds": ["Staff", "Office Manager"] }
+  ],
+  "flows": [
+    { "id": "flow.place-order", "name": "Place, change or cancel my order", "roleId": "Staff", "screenIds": ["screen.today"] },
+    { "id": "flow.publish-menu", "name": "Build and publish today's menu", "roleId": "Office Manager", "screenIds": ["screen.today"] },
+    { "id": "flow.close-ordering", "name": "Close ordering", "roleId": "Office Manager", "screenIds": ["screen.today", "screen.orders"] },
+    { "id": "flow.order-list", "name": "See who ordered what", "roleId": "Office Manager", "screenIds": ["screen.today", "screen.orders"] }
+  ]
+}

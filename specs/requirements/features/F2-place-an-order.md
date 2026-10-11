@@ -21,8 +21,13 @@ Needs: F1.
 - Each person has at most one order per day.
 - Each menu item can be chosen once; there are no quantities.
 - An order has no notes or special requests.
+- An order has at least one item; to have none, the person cancels it. *assumed*
 
 ## Out of Scope
 
 - Quantities per item.
 - Notes or special requests on an order.
+
+## Open Questions
+
+1. Does the office manager also order lunch for themselves? The design gives the office manager no ordering rights; someone who does both would hold both roles.

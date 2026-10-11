@@ -1,0 +1,15 @@
+title Team Lunch Order
+
+component lunch-webapp as "Lunch Order Web" web-application
+component lunch-api as "Lunch Order API" service
+component lunch-db as "Lunch Database" database
+
+east user-auth as "Thunder Auth" identity-server
+
+north -> lunch-webapp
+north -> lunch-api
+
+lunch-webapp -> lunch-api
+lunch-webapp -> user-auth
+lunch-api -> user-auth
+lunch-api -> lunch-db
