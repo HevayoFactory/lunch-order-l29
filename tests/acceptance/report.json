@@ -1,0 +1,876 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-11T13:39:27.481Z",
+  "commit": "1152c492eb092c541df8008d6021d0eea2438f45",
+  "baseUrl": "http://http-lunch-order-l-development-default-26da0d28.openchoreoapis.localhost:19080/",
+  "isolation": "none established: no scenario got past sign-in because the API is unreachable (404 at the gateway), so no container could be created and no counts read",
+  "scenarios": [
+    {
+      "feature": "F1 Publish daily menu",
+      "featureFile": "specs/validation/acceptance/F1-publish-daily-menu.feature",
+      "line": 6,
+      "rule": "The office manager builds today's menu by typing in items, each with a name and a description",
+      "scenario": "Adding items to a new menu",
+      "tags": [],
+      "outcome": "blocked",
+      "steps": [
+        {
+          "text": "Olivia the office manager has no menu for today",
+          "keyword": "Given",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "Olivia adds \"Chicken katsu curry\" described as \"Crumbed chicken, rice and mild curry sauce\" and \"Greek salad\" described as \"Tomato, cucumber, olives and feta\"",
+          "keyword": "When",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "today's menu has exactly 2 items",
+          "keyword": "Then",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "staff cannot see the menu yet",
+          "keyword": "Then",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        }
+      ]
+    },
+    {
+      "feature": "F1 Publish daily menu",
+      "featureFile": "specs/validation/acceptance/F1-publish-daily-menu.feature",
+      "line": 16,
+      "rule": "Only a menu with at least one item can be published",
+      "scenario": "Publishing an empty menu",
+      "tags": [
+        "@negative"
+      ],
+      "outcome": "blocked",
+      "steps": [
+        {
+          "text": "Olivia has an empty menu for today",
+          "keyword": "Given",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "Olivia publishes the menu",
+          "keyword": "When",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "the menu is still not published",
+          "keyword": "Then",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        }
+      ]
+    },
+    {
+      "feature": "F1 Publish daily menu",
+      "featureFile": "specs/validation/acceptance/F1-publish-daily-menu.feature",
+      "line": 21,
+      "rule": "Only a menu with at least one item can be published",
+      "scenario": "Publishing a menu with items",
+      "tags": [],
+      "outcome": "blocked",
+      "steps": [
+        {
+          "text": "Olivia has a menu with \"Greek salad\" for today",
+          "keyword": "Given",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "Olivia publishes the menu",
+          "keyword": "When",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "Asha the staff member can see \"Greek salad\" on today's menu",
+          "keyword": "Then",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        }
+      ]
+    },
+    {
+      "feature": "F1 Publish daily menu",
+      "featureFile": "specs/validation/acceptance/F1-publish-daily-menu.feature",
+      "line": 29,
+      "rule": "The published menu can be edited until ordering is closed",
+      "scenario": "Adding an item to a published menu",
+      "tags": [],
+      "outcome": "blocked",
+      "steps": [
+        {
+          "text": "Olivia has published a menu with \"Greek salad\"",
+          "keyword": "Given",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "Olivia adds \"Fruit cup\" described as \"Seasonal fruit\"",
+          "keyword": "When",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "Asha sees both \"Greek salad\" and \"Fruit cup\" on today's menu",
+          "keyword": "Then",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        }
+      ]
+    },
+    {
+      "feature": "F1 Publish daily menu",
+      "featureFile": "specs/validation/acceptance/F1-publish-daily-menu.feature",
+      "line": 34,
+      "rule": "The published menu can be edited until ordering is closed",
+      "scenario": "Removing an item that a staff member had ordered",
+      "tags": [],
+      "outcome": "blocked",
+      "steps": [
+        {
+          "text": "Olivia has published a menu with \"Greek salad\" and \"Fruit cup\"",
+          "keyword": "Given",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "Asha has ordered only \"Fruit cup\"",
+          "keyword": "Given",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "Olivia removes \"Fruit cup\" from the menu",
+          "keyword": "When",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "Asha has no order for today",
+          "keyword": "Then",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        }
+      ]
+    },
+    {
+      "feature": "F1 Publish daily menu",
+      "featureFile": "specs/validation/acceptance/F1-publish-daily-menu.feature",
+      "line": 43,
+      "rule": "Staff see today's published menu with each item's name and description",
+      "scenario": "Staff view the menu",
+      "tags": [],
+      "outcome": "blocked",
+      "steps": [
+        {
+          "text": "Olivia has published a menu with \"Veggie pad thai\" described as \"Rice noodles, tofu, peanuts and lime\"",
+          "keyword": "Given",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "Asha opens today's menu",
+          "keyword": "When",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "she sees \"Veggie pad thai\" with the description \"Rice noodles, tofu, peanuts and lime\"",
+          "keyword": "Then",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "she sees no price",
+          "keyword": "Then",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        }
+      ]
+    },
+    {
+      "feature": "F1 Publish daily menu",
+      "featureFile": "specs/validation/acceptance/F1-publish-daily-menu.feature",
+      "line": 53,
+      "rule": "Staff see that no menu is available until one is published",
+      "scenario": "No menu published yet",
+      "tags": [
+        "@negative"
+      ],
+      "outcome": "blocked",
+      "steps": [
+        {
+          "text": "Olivia has not published a menu for today",
+          "keyword": "Given",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "Asha opens today's menu",
+          "keyword": "When",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "she sees that no menu is available yet",
+          "keyword": "Then",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "she is offered no items to order",
+          "keyword": "Then",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        }
+      ]
+    },
+    {
+      "feature": "F2 Place an order",
+      "featureFile": "specs/validation/acceptance/F2-place-an-order.feature",
+      "line": 6,
+      "rule": "Staff order one or more items from the published menu, one order per person",
+      "scenario": "Placing an order",
+      "tags": [],
+      "outcome": "blocked",
+      "steps": [
+        {
+          "text": "Olivia has published a menu with \"Chicken katsu curry\" and \"Fruit cup\"",
+          "keyword": "Given",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "Asha orders \"Chicken katsu curry\" and \"Fruit cup\"",
+          "keyword": "When",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "Asha's order for today holds exactly those 2 items",
+          "keyword": "Then",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        }
+      ]
+    },
+    {
+      "feature": "F2 Place an order",
+      "featureFile": "specs/validation/acceptance/F2-place-an-order.feature",
+      "line": 12,
+      "rule": "Staff order one or more items from the published menu, one order per person",
+      "scenario": "An order with no items",
+      "tags": [
+        "@negative"
+      ],
+      "outcome": "blocked",
+      "steps": [
+        {
+          "text": "Olivia has published a menu with \"Chicken katsu curry\"",
+          "keyword": "Given",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "Asha tries to place an order with no items",
+          "keyword": "When",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "Asha has no order for today",
+          "keyword": "Then",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        }
+      ]
+    },
+    {
+      "feature": "F2 Place an order",
+      "featureFile": "specs/validation/acceptance/F2-place-an-order.feature",
+      "line": 21,
+      "rule": "Only staff place orders, not the office manager",
+      "scenario": "The office manager tries to order",
+      "tags": [
+        "@negative"
+      ],
+      "outcome": "blocked",
+      "steps": [
+        {
+          "text": "Olivia the office manager has published a menu with \"Greek salad\"",
+          "keyword": "Given",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "Olivia tries to place an order for \"Greek salad\" with her office manager sign-in",
+          "keyword": "When",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "no order is added to today's orders",
+          "keyword": "Then",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        }
+      ]
+    },
+    {
+      "feature": "F2 Place an order",
+      "featureFile": "specs/validation/acceptance/F2-place-an-order.feature",
+      "line": 29,
+      "rule": "Staff can change their order while ordering is open",
+      "scenario": "Changing an order",
+      "tags": [],
+      "outcome": "blocked",
+      "steps": [
+        {
+          "text": "Olivia has published a menu with \"Greek salad\" and \"Fruit cup\"",
+          "keyword": "Given",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "Asha has ordered \"Greek salad\"",
+          "keyword": "Given",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "Asha changes her order to \"Fruit cup\"",
+          "keyword": "When",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "Asha sees her current order holding only \"Fruit cup\"",
+          "keyword": "Then",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        }
+      ]
+    },
+    {
+      "feature": "F2 Place an order",
+      "featureFile": "specs/validation/acceptance/F2-place-an-order.feature",
+      "line": 38,
+      "rule": "Staff can cancel their order while ordering is open",
+      "scenario": "Cancelling an order",
+      "tags": [],
+      "outcome": "blocked",
+      "steps": [
+        {
+          "text": "Olivia has published a menu with \"Greek salad\"",
+          "keyword": "Given",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "Asha has ordered \"Greek salad\"",
+          "keyword": "Given",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "Asha cancels her order",
+          "keyword": "When",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "Asha has no order for today",
+          "keyword": "Then",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        }
+      ]
+    },
+    {
+      "feature": "F2 Place an order",
+      "featureFile": "specs/validation/acceptance/F2-place-an-order.feature",
+      "line": 47,
+      "rule": "Once ordering is closed a staff member sees their final order and cannot change or cancel it",
+      "scenario": "Viewing the final order",
+      "tags": [],
+      "outcome": "blocked",
+      "steps": [
+        {
+          "text": "Asha has ordered \"Greek salad\" and Olivia has closed ordering",
+          "keyword": "Given",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "Asha opens today's lunch",
+          "keyword": "When",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "she sees her order holding only \"Greek salad\"",
+          "keyword": "Then",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        }
+      ]
+    },
+    {
+      "feature": "F2 Place an order",
+      "featureFile": "specs/validation/acceptance/F2-place-an-order.feature",
+      "line": 53,
+      "rule": "Once ordering is closed a staff member sees their final order and cannot change or cancel it",
+      "scenario": "Changing an order after closing",
+      "tags": [
+        "@negative"
+      ],
+      "outcome": "blocked",
+      "steps": [
+        {
+          "text": "Asha has ordered \"Greek salad\" and Olivia has closed ordering",
+          "keyword": "Given",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "Asha tries to change her order to \"Fruit cup\"",
+          "keyword": "When",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "Asha's order still holds only \"Greek salad\"",
+          "keyword": "Then",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        }
+      ]
+    },
+    {
+      "feature": "F2 Place an order",
+      "featureFile": "specs/validation/acceptance/F2-place-an-order.feature",
+      "line": 59,
+      "rule": "Once ordering is closed a staff member sees their final order and cannot change or cancel it",
+      "scenario": "Cancelling an order after closing",
+      "tags": [
+        "@negative"
+      ],
+      "outcome": "blocked",
+      "steps": [
+        {
+          "text": "Asha has ordered \"Greek salad\" and Olivia has closed ordering",
+          "keyword": "Given",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "Asha tries to cancel her order",
+          "keyword": "When",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "Asha's order still holds only \"Greek salad\"",
+          "keyword": "Then",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        }
+      ]
+    },
+    {
+      "feature": "F2 Place an order",
+      "featureFile": "specs/validation/acceptance/F2-place-an-order.feature",
+      "line": 68,
+      "rule": "Nobody can place an order once ordering is closed",
+      "scenario": "Ordering after closing",
+      "tags": [
+        "@negative"
+      ],
+      "outcome": "blocked",
+      "steps": [
+        {
+          "text": "Olivia has published a menu with \"Greek salad\" and closed ordering",
+          "keyword": "Given",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "Ravi, who has not ordered, tries to order \"Greek salad\"",
+          "keyword": "When",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "Ravi has no order for today",
+          "keyword": "Then",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        }
+      ]
+    },
+    {
+      "feature": "F2 Place an order",
+      "featureFile": "specs/validation/acceptance/F2-place-an-order.feature",
+      "line": 77,
+      "rule": "Nobody can order before the menu is published",
+      "scenario": "Ordering before publication",
+      "tags": [
+        "@negative"
+      ],
+      "outcome": "blocked",
+      "steps": [
+        {
+          "text": "Olivia has a draft menu with \"Greek salad\" that is not published",
+          "keyword": "Given",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "Asha tries to order \"Greek salad\"",
+          "keyword": "When",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "Asha has no order for today",
+          "keyword": "Then",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        }
+      ]
+    },
+    {
+      "feature": "F3 Close ordering",
+      "featureFile": "specs/validation/acceptance/F3-close-ordering.feature",
+      "line": 6,
+      "rule": "The office manager closes ordering for today once the menu is published, and sees its state",
+      "scenario": "Closing ordering",
+      "tags": [],
+      "outcome": "blocked",
+      "steps": [
+        {
+          "text": "Olivia has published a menu with \"Greek salad\"",
+          "keyword": "Given",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "Olivia closes ordering",
+          "keyword": "When",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "Olivia sees that ordering for today is closed",
+          "keyword": "Then",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        }
+      ]
+    },
+    {
+      "feature": "F3 Close ordering",
+      "featureFile": "specs/validation/acceptance/F3-close-ordering.feature",
+      "line": 12,
+      "rule": "The office manager closes ordering for today once the menu is published, and sees its state",
+      "scenario": "Closing before publishing",
+      "tags": [
+        "@negative"
+      ],
+      "outcome": "blocked",
+      "steps": [
+        {
+          "text": "Olivia has a draft menu with \"Greek salad\"",
+          "keyword": "Given",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "Olivia tries to close ordering",
+          "keyword": "When",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "ordering for today is not closed",
+          "keyword": "Then",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        }
+      ]
+    },
+    {
+      "feature": "F3 Close ordering",
+      "featureFile": "specs/validation/acceptance/F3-close-ordering.feature",
+      "line": 21,
+      "rule": "Closing is final for the day",
+      "scenario": "Closing twice or reopening",
+      "tags": [
+        "@negative"
+      ],
+      "outcome": "blocked",
+      "steps": [
+        {
+          "text": "Olivia has published a menu and closed ordering",
+          "keyword": "Given",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "Olivia tries to reopen ordering",
+          "keyword": "When",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "ordering for today is still closed",
+          "keyword": "Then",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        }
+      ]
+    },
+    {
+      "feature": "F3 Close ordering",
+      "featureFile": "specs/validation/acceptance/F3-close-ordering.feature",
+      "line": 30,
+      "rule": "Only the office manager can close ordering",
+      "scenario": "Staff try to close ordering",
+      "tags": [
+        "@negative"
+      ],
+      "outcome": "blocked",
+      "steps": [
+        {
+          "text": "Olivia has published a menu with \"Greek salad\"",
+          "keyword": "Given",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "Asha the staff member tries to close ordering",
+          "keyword": "When",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "ordering for today is still open",
+          "keyword": "Then",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        }
+      ]
+    },
+    {
+      "feature": "F3 Close ordering",
+      "featureFile": "specs/validation/acceptance/F3-close-ordering.feature",
+      "line": 38,
+      "rule": "Staff see whether ordering is open or closed",
+      "scenario": "Staff see ordering open",
+      "tags": [],
+      "outcome": "blocked",
+      "steps": [
+        {
+          "text": "Olivia has published a menu with \"Greek salad\"",
+          "keyword": "Given",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "Asha opens today's menu",
+          "keyword": "When",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "she sees that ordering is open",
+          "keyword": "Then",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        }
+      ]
+    },
+    {
+      "feature": "F3 Close ordering",
+      "featureFile": "specs/validation/acceptance/F3-close-ordering.feature",
+      "line": 43,
+      "rule": "Staff see whether ordering is open or closed",
+      "scenario": "Staff see ordering closed",
+      "tags": [],
+      "outcome": "blocked",
+      "steps": [
+        {
+          "text": "Olivia has published a menu and closed ordering",
+          "keyword": "Given",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "Asha opens today's menu",
+          "keyword": "When",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "she sees that ordering is closed",
+          "keyword": "Then",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        }
+      ]
+    },
+    {
+      "feature": "F3 Close ordering",
+      "featureFile": "specs/validation/acceptance/F3-close-ordering.feature",
+      "line": 52,
+      "rule": "The menu cannot be edited once ordering is closed",
+      "scenario": "Editing a closed menu",
+      "tags": [
+        "@negative"
+      ],
+      "outcome": "blocked",
+      "steps": [
+        {
+          "text": "Olivia has published a menu with \"Greek salad\" and closed ordering",
+          "keyword": "Given",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "Olivia tries to add \"Fruit cup\" to the menu",
+          "keyword": "When",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "today's menu still has exactly 1 item",
+          "keyword": "Then",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        }
+      ]
+    },
+    {
+      "feature": "F4 Order list",
+      "featureFile": "specs/validation/acceptance/F4-order-list.feature",
+      "line": 6,
+      "rule": "The office manager sees today's orders per person with their items, and how many people ordered",
+      "scenario": "Viewing the list",
+      "tags": [],
+      "outcome": "blocked",
+      "steps": [
+        {
+          "text": "Asha has ordered \"Chicken katsu curry\" and \"Fruit cup\" and Ravi has ordered \"Veggie pad thai\"",
+          "keyword": "Given",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "Olivia the office manager opens the order list",
+          "keyword": "When",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "she sees Asha with \"Chicken katsu curry\" and \"Fruit cup\", and Ravi with \"Veggie pad thai\"",
+          "keyword": "Then",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "she sees that 2 people have ordered",
+          "keyword": "Then",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        }
+      ]
+    },
+    {
+      "feature": "F4 Order list",
+      "featureFile": "specs/validation/acceptance/F4-order-list.feature",
+      "line": 15,
+      "rule": "The list is sorted by the person's name, A to Z",
+      "scenario": "Orders placed out of alphabetical order",
+      "tags": [],
+      "outcome": "blocked",
+      "steps": [
+        {
+          "text": "Ravi has ordered \"Veggie pad thai\", then Maya has ordered \"Greek salad\", then Asha has ordered \"Fruit cup\"",
+          "keyword": "Given",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "Olivia the office manager opens the order list",
+          "keyword": "When",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "she sees the people in the order Asha, Maya, Ravi",
+          "keyword": "Then",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        }
+      ]
+    },
+    {
+      "feature": "F4 Order list",
+      "featureFile": "specs/validation/acceptance/F4-order-list.feature",
+      "line": 23,
+      "rule": "The list is available while ordering is open and after it is closed",
+      "scenario": "Viewing the list while ordering is open",
+      "tags": [],
+      "outcome": "blocked",
+      "steps": [
+        {
+          "text": "Asha has ordered \"Greek salad\" and ordering is open",
+          "keyword": "Given",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "Olivia opens the order list",
+          "keyword": "When",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "she sees Asha with \"Greek salad\"",
+          "keyword": "Then",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        }
+      ]
+    },
+    {
+      "feature": "F4 Order list",
+      "featureFile": "specs/validation/acceptance/F4-order-list.feature",
+      "line": 28,
+      "rule": "The list is available while ordering is open and after it is closed",
+      "scenario": "Viewing the list after closing",
+      "tags": [],
+      "outcome": "blocked",
+      "steps": [
+        {
+          "text": "Asha has ordered \"Greek salad\" and Olivia has closed ordering",
+          "keyword": "Given",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "Olivia opens the order list",
+          "keyword": "When",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "she sees Asha with \"Greek salad\"",
+          "keyword": "Then",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        }
+      ]
+    },
+    {
+      "feature": "F4 Order list",
+      "featureFile": "specs/validation/acceptance/F4-order-list.feature",
+      "line": 36,
+      "rule": "The list reflects changes and cancellations",
+      "scenario": "A staff member changes and another cancels",
+      "tags": [],
+      "outcome": "blocked",
+      "steps": [
+        {
+          "text": "Asha has ordered \"Greek salad\" and Ravi has ordered \"Fruit cup\"",
+          "keyword": "Given",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "Asha changes her order to \"Fruit cup\" and Ravi cancels his order",
+          "keyword": "When",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "Olivia sees only Asha, with \"Fruit cup\"",
+          "keyword": "Then",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        }
+      ]
+    },
+    {
+      "feature": "F4 Order list",
+      "featureFile": "specs/validation/acceptance/F4-order-list.feature",
+      "line": 44,
+      "rule": "The list shows a clear empty state when nobody has ordered",
+      "scenario": "No orders yet",
+      "tags": [],
+      "outcome": "blocked",
+      "steps": [
+        {
+          "text": "Olivia has published a menu and nobody has ordered",
+          "keyword": "Given",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "Olivia opens the order list",
+          "keyword": "When",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "she sees that nobody has ordered yet",
+          "keyword": "Then",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        }
+      ]
+    },
+    {
+      "feature": "F4 Order list",
+      "featureFile": "specs/validation/acceptance/F4-order-list.feature",
+      "line": 53,
+      "rule": "Only the office manager sees everyone's orders",
+      "scenario": "Staff try to see the list",
+      "tags": [
+        "@negative"
+      ],
+      "outcome": "blocked",
+      "steps": [
+        {
+          "text": "Ravi has ordered \"Veggie pad thai\"",
+          "keyword": "Given",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "Asha the staff member tries to open the order list",
+          "keyword": "When",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        },
+        {
+          "text": "she cannot see Ravi's order",
+          "keyword": "Then",
+          "observed": "Not carried out: the app's first call GET /api/menus/today (after signing in as test-office-manager) returned 404 {\"error\":\"Not Found\"} from the gateway; the same 404 came from the API endpoint directly for /menus/today and /published-menus/today with no token. The menu page showed \"could not be loaded\", so no state could be set up or read at any interface."
+        }
+      ]
+    }
+  ]
+}
