@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "artifacts": [
+    {
+      "path": "specs/design/domain-model.md",
+      "comments": [
+        {
+          "id": "95318b5e-094b-4af5-a6d3-4c9457155c8a",
+          "author": {
+            "id": "01900000-0000-7000-8000-000000000030",
+            "name": "Administrator"
+          },
+          "text": "Rename the ORDER field userName to staffName; it is the display name the office manager sees on the order list.",
+          "createdAt": "2026-10-11T07:59:00.003Z",
+          "status": "sent",
+          "sentAt": "2026-10-11T08:00:26.265Z"
+        }
+      ]
+    },
+    {
+      "path": "specs/design/components/lunch-webapp/prototype.json",
+      "comments": [
+        {
+          "id": "f0baf72e-a7fa-4bd0-9674-502c15b5abf7",
+          "author": {
+            "id": "01900000-0000-7000-8000-000000000030",
+            "name": "Administrator"
+          },
+          "text": "Rename this button to Save my order.",
+          "createdAt": "2026-10-11T07:59:47.950Z",
+          "status": "sent",
+          "anchor": {
+            "screenId": "screen.today",
+            "roleId": "Staff",
+            "stateId": "state.default",
+            "elementIds": [
+              "btn.place-order"
+            ]
+          },
+          "sentAt": "2026-10-11T08:00:26.265Z"
+        }
+      ]
+    },
+    {
+      "path": "specs/design/security.json",
+      "comments": [
+        {
+          "id": "827ef612-f40c-4b42-93a9-3b8eb001d4cd",
+          "author": {
+            "id": "01900000-0000-7000-8000-000000000030",
+            "name": "Administrator"
+          },
+          "text": "Managers might need to approve big orders.",
+          "createdAt": "2026-10-11T08:00:08.332Z",
+          "status": "sent",
+          "sentAt": "2026-10-11T08:00:26.265Z"
+        }
+      ]
+    }
+  ]
+}
