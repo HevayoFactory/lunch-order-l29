@@ -3,6 +3,7 @@
   "artifacts": [
     {
       "path": "specs/design/domain-model.md",
+      "checkedHash": "f9f9902b563d071aaaf3cc8a2a17221263f69200c03bb3cf8b39c3107e47c657",
       "comments": [
         {
           "id": "95318b5e-094b-4af5-a6d3-4c9457155c8a",
@@ -22,6 +23,7 @@
     },
     {
       "path": "specs/design/components/lunch-webapp/prototype.json",
+      "checkedHash": "a6b7422cee3e13dab149d315bf4e57ac71a6b3cb7f802ae203e8cd50e980abc1",
       "comments": [
         {
           "id": "f0baf72e-a7fa-4bd0-9674-502c15b5abf7",
@@ -44,11 +46,23 @@
           "addressedAt": "2026-10-11T08:00:31.523Z",
           "revision": 2,
           "reply": "The button on Today's lunch now reads Save my order, for placing and for updating."
+        },
+        {
+          "id": "75e02258-653c-492c-a21b-7e2e9c02c685",
+          "author": {
+            "id": "01900000-0000-7000-8000-000000000030",
+            "name": "Administrator"
+          },
+          "text": "On Today's lunch, label the red button Cancel order instead of Cancel my order.",
+          "createdAt": "2026-10-11T08:05:57.250Z",
+          "status": "sent",
+          "sentAt": "2026-10-11T08:06:07.546Z"
         }
       ]
     },
     {
       "path": "specs/design/security.json",
+      "checkedHash": "5e6e844db3950191f6b18b253beadb551b21c2f1ed3ea339143d40bafcf4febd",
       "comments": [
         {
           "id": "827ef612-f40c-4b42-93a9-3b8eb001d4cd",
@@ -67,6 +81,18 @@
           "reply": "Dropped as you answered: no approval step and no warning, so roles, permissions, screens and the contract stay as they are."
         }
       ]
+    },
+    {
+      "path": "specs/design/design.cell",
+      "checkedHash": "44ecf33b77134a30546acd97a539e8a16de8577d57e3fe6310ac9baed7ef09ae"
+    },
+    {
+      "path": "specs/design/components/lunch-api/openapi.yaml",
+      "checkedHash": "acabdb01b42c1f17a7e54bc1b017d35b901da8be23c08f4f0754e4617b3dba4d"
+    },
+    {
+      "path": "specs/design/decisions.md",
+      "checkedHash": "79ca0c6eca0ad05563bc119246a56da086f75986fc9c2523d92ffdfdc98e265d"
     }
   ]
 }
