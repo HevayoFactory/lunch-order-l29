@@ -1,0 +1,11 @@
+# crash artefacts — never wanted, in any component
+core
+!core/
+core.[0-9]*
+hs_err_pid*.log
+replay_pid*.log
+
+/lunch-api/target/
+/lunch-api/Config.toml
+/lunch-webapp/node_modules/
+/lunch-webapp/dist/
