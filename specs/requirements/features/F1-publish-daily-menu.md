@@ -17,10 +17,11 @@ The office manager prepares and publishes today's menu so staff can order from i
 - A menu item holds a name and a description only; no price.
 - The menu is typed in fresh each day; there is no reusable item list.
 - The published menu can be edited until ordering is closed.
-- A menu needs at least one item before it can be published. *assumed*
-- Removing an item from the published menu also removes it from any order that chose it; an order left with no items is cancelled. *assumed*
+- A menu needs at least one item before it can be published.
+- Removing an item from the published menu also removes it from any order that chose it; an order left with no items is cancelled.
 
 ## Out of Scope
 
 - Prices on menu items.
 - A reusable library of menu items carried over between days.
+

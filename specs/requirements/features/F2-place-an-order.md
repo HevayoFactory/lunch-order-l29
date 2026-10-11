@@ -21,7 +21,7 @@ Needs: F1.
 - Each person has at most one order per day.
 - Each menu item can be chosen once; there are no quantities.
 - An order has no notes or special requests.
-- An order has at least one item; to have none, the person cancels it. *assumed*
+- An order has at least one item; to have none, the person cancels it.
 - Only staff place orders; the office manager does not order lunch in the app, and the two roles stay separate.
 
 ## Out of Scope
@@ -30,3 +30,4 @@ Needs: F1.
 - Notes or special requests on an order.
 
 ## Open Questions
+
