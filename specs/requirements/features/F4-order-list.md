@@ -24,3 +24,4 @@ Needs: F2.
 
 - Per-item totals view.
 - Exporting or printing the list.
+
