@@ -121,7 +121,7 @@ function StaffToday() {
               <Stack direction="row">
                 <Button id="btn.place-order" label="Save my order" emphasis="primary" submit />
                 {mine && (
-                  <Button id="btn.cancel-order" label="Cancel my order" emphasis="danger" onPress={() => orderList.remove(mine.id)} />
+                  <Button id="btn.cancel-order" label="Cancel order" emphasis="danger" onPress={() => orderList.remove(mine.id)} />
                 )}
               </Stack>
             }

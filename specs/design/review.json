@@ -55,8 +55,11 @@
           },
           "text": "On Today's lunch, label the red button Cancel order instead of Cancel my order.",
           "createdAt": "2026-10-11T08:05:57.250Z",
-          "status": "sent",
-          "sentAt": "2026-10-11T08:06:07.546Z"
+          "status": "addressed",
+          "sentAt": "2026-10-11T08:06:07.546Z",
+          "addressedAt": "2026-10-11T08:06:12.585Z",
+          "revision": 4,
+          "reply": "The red button on Today's lunch now reads Cancel order."
         }
       ]
     },
