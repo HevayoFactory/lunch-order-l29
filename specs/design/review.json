@@ -58,10 +58,13 @@
           },
           "text": "Managers might need to approve big orders.",
           "createdAt": "2026-10-11T08:00:08.332Z",
-          "status": "sent",
+          "status": "addressed",
           "sentAt": "2026-10-11T08:03:44.603Z",
           "question": "What counts as a big order (for example more than a number of items), and should the office manager approve or reject it before it counts, or only be warned about it?",
-          "answer": "No approval needed. Lunch orders are small, so drop this: no approval step and no warning."
+          "answer": "No approval needed. Lunch orders are small, so drop this: no approval step and no warning.",
+          "addressedAt": "2026-10-11T08:03:49.953Z",
+          "revision": 3,
+          "reply": "Dropped as you answered: no approval step and no warning, so roles, permissions, screens and the contract stay as they are."
         }
       ]
     }
